@@ -25,7 +25,7 @@ In this step we will split the data into train, validation and test set. The tra
 
 ## Setting up/Building the model
 
-For this application we'll be using a CNN model with VGG16 pre-trained weights for image detection and some dense layers for classification of the output (see summary below)
+For this application we'll be using a CNN model with VGG16 pre-trained weights for image detection and some dense layers for classification of the output (see summary below).
 
 
 ![image](https://user-images.githubusercontent.com/94637607/169670605-c581dbb1-8d59-462a-a836-5ecb62070d0f.png)
