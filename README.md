@@ -1,4 +1,4 @@
-#Acknolodgement:
+# Acknolodgement:
 This work was done during my internship at the Research Center for Scientific and Technical Information (CERIST), Algiers, Algeria. I was fortunate enough to work with talentend and amazing researchers there whom i learned a lot of valuable knowledge from. So I would like to take a moment to thank all the researcehrs working in CERIST, and in the STI deparetemnt.
 
 # Licence-Plate-Detection-CNN
