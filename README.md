@@ -27,12 +27,16 @@ size, while also apending the annotations to our y array
 
 In this step we will split the data into train, validation and test set. The train and validation sets will be used when training the model (and validating). While the test set will be used to evaluate the model.
 
+## Hyperparams tuning:
+
+<img src="screenshots/hyperparam_cnn.png" alt="hyperparams Screenshot" width="600"/>
+
 ## Setting up/Building the model
 
 For this application we'll be using a CNN model with VGG16 pre-trained weights for image detection and some dense layers for classification of the output (see summary below).
 
 
-![image](https://user-images.githubusercontent.com/94637607/169670605-c581dbb1-8d59-462a-a836-5ecb62070d0f.png)
+<img src="screenshots/model_arch.png" alt="Model arch Screenshot" width="600"/>
 
 ## Training and Evaluation
 Now that we have created the model, and checked it’s summary. It’s time to get to the
@@ -40,4 +44,5 @@ important part of this project, the trainning of the model. The time required fo
 on many facteurs including data size, equipment(CPU, GPU ..) etc.
 The accuracy by epochs graph can be seen below.
 
-![image](https://user-images.githubusercontent.com/94637607/169670704-afb57bcb-6b93-47ef-855d-6fd10ecadda5.png)
+<img src="screenshots/accuracy_plot.png" alt="accuracy plot Screenshot" width="600"/>
+
