@@ -31,6 +31,7 @@ In this step we will split the data into train, validation and test set. The tra
 
 <img src="screenshots/hyperparam_cnn.png" alt="hyperparams Screenshot" width="600"/>
 
+For more details abbout the hyperparams tuning see the report: https://api.wandb.ai/links/mondhirch/s59tvt7g
 ## Setting up/Building the model
 
 For this application we'll be using a CNN model with VGG16 pre-trained weights for image detection and some dense layers for classification of the output (see summary below).
