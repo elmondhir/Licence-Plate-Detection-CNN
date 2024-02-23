@@ -37,7 +37,7 @@ For more details abbout the hyperparams tuning see the report: https://api.wandb
 For this application we'll be using a CNN model with VGG16 pre-trained weights for image detection and some dense layers for classification of the output (see summary below).
 
 
-<img src="screenshots/model_arch.png" alt="Model arch Screenshot" width="600"/>
+<img src="screenshots/model_arche.png" alt="Model arch Screenshot" width="600"/>
 
 ## Training and Evaluation
 Now that we have created the model, and checked it’s summary. It’s time to get to the
