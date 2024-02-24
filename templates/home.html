@@ -1,11 +1,103 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Image Upload with Django</title>
+
+    <!-- plugins:css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/home.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/mdi/css/materialdesignicons.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/flag-icon-css/css/flag-icon.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/css/vendor.bundle.base.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/font-awesome/css/font-awesome.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+
+    <!-- End layout styles -->
+
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png'%}" />
+
 </head>
 <body>
-    <h1> Welcome to Licence plate detection</h1>
+    <div class="container-scroller">
+        <!-- upper nav -->
+        
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="index.html"><img src="{% static 'assets/images/cnn.png'%}" alt="logo" /></a>
+        </div>
+
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        </div>
+        </nav>
+    
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <!-- Side nav -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item nav-category">Main</li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <span class="icon-bg"><i class="mdi mdi-cube"></i></span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+                </li>
+            </ul>
+            </nav>
+        
+            <!-- Modfy elements in the main container -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                          <div class="d-xl-flex justify-content-between align-items-start">
+                            <img id="uploaded-image" src="#" alt="" style="display: none;">
+                            <p id="alt-text" class="text-muted" style="display: none;">Uploaded Image</p>                         
+                        </div>
+                        <br>
+                        
+                        <div class="d-xl-flex justify-content-between align-items-start">
+                        <input  type="file" id= "image-input" accept="image/*" class="btn btn-primary btn-md"></input>
+                        <button type="button" id="process-button" class="btn btn-primary btn-md" style="display: none;" >Process image</button>
+                        </div>
+
+                </div>
+            </div>
+
+                </div>
+            </div>
+            
+        </div>
+    
+    </div>
+
+    <script>
+        document.getElementById('image-input').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const imageContainer = document.getElementById('uploaded-image');
+            const buttoncontainer = document.getElementById('process-button');
+            const altText = document.getElementById('alt-text');
+            
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imageContainer.src = e.target.result;
+                    imageContainer.style.display = 'block';
+                    buttoncontainer.style.display = 'block';
+                    altText.style.display = 'none';
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                // If no file is selected, hide the image and show the alt text
+                imageContainer.style.display = 'none';
+                altText.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
