@@ -53,6 +53,8 @@
             <!-- Modfy elements in the main container -->
             <div class="main-panel">
                 <div class="content-wrapper">
+                    <form enctype="multipart/form-data" action="{% url 'home' %}" method="POST" >
+                    {% csrf_token %}
                           <div class="d-xl-flex justify-content-between align-items-start">
                             <img id="uploaded-image" src="#" alt="" style="display: none;">
                             <p id="alt-text" class="text-muted" style="display: none;">Uploaded Image</p>                         
@@ -60,10 +62,18 @@
                         <br>
                         
                         <div class="d-xl-flex justify-content-between align-items-start">
-                        <input  type="file" id= "image-input" accept="image/*" class="btn btn-primary btn-md"></input>
-                        <button type="button" id="process-button" class="btn btn-primary btn-md" style="display: none;" >Process image</button>
+                            <input  type="file" id="image-input" name="image-input" accept="image/*" class="btn btn-primary btn-md"></input>
+                            
+                            <button type="submit" id="process-button" class="btn btn-primary btn-md" style="display: none;" >Process image</button>
+                            
                         </div>
-
+                    </form>
+                    {% if processed_result %}
+                        <div>
+                            <h2>Processed Result:</h2>
+                            <img src="data:;base64, {{ processed_result }}" alt="Processed Image">
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 
